@@ -75,8 +75,48 @@ Examples:
     vowelCount('hmmm') // {};
     vowelCount('I Am awesome and so are you') // {i: 1, a: 4, e: 3, o: 3, u: 1};
 */
-function vowelCount(str){
-   
+function vowelCount(str) {
+    const counter = {};
+    const as = ['A', 'a'];
+    const es = ['E', 'e'];
+    const is = ['I', 'i'];
+    const os = ['O', 'o'];
+    const us = ['U', 'u'];
+    let aCount = 0;
+    let eCount = 0;
+    let iCount = 0;
+    let oCount = 0;
+    let uCount = 0;
+    Array.from(str).forEach(function (value, i, arr) {
+        if (as.includes(arr[i])) {
+            aCount++;
+        }
+        else if (es.includes(arr[i])) {
+            eCount++;
+        } else if (is.includes(arr[i])) {
+            iCount++;
+        } else if (os.includes(arr[i])) {
+            oCount++;
+        } else if (us.includes(arr[i])) {
+            uCount++;
+        }  
+    })
+    if (aCount > 0) {
+        counter.a = aCount;
+    }
+    if (eCount > 0) {
+        counter.e = eCount;
+    }
+    if (iCount > 0) {
+        counter.i = iCount;
+    }
+    if (oCount > 0) {
+        counter.o = oCount;
+    }
+    if (uCount > 0) {
+        counter.u = uCount;
+    }
+    return counter;
 }
 
 /*
